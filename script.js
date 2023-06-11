@@ -50,6 +50,32 @@ const restaurant = {
   },
 };
 
+// Use ANY data type, return ANY data type, Shortcircuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'Jonas');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+/*
 //Spread , beacuse of Right side of ==
 const arr = [1, 2, ...[3, 4]];
 
@@ -85,6 +111,8 @@ add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
+
+*/
 /*
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
