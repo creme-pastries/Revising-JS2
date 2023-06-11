@@ -50,6 +50,15 @@ const restaurant = {
   },
 };
 
+restaurant.numGuests = 0;
+
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+// Nullish: null and undefined (NOT 0 or '')
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+/*
 // Use ANY data type, return ANY data type, Shortcircuiting
 console.log(3 || 'Jonas');
 console.log('' || 'Jonas');
@@ -75,7 +84,7 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
-/*
+
 //Spread , beacuse of Right side of ==
 const arr = [1, 2, ...[3, 4]];
 
