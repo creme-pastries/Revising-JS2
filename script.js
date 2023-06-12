@@ -47,6 +47,54 @@ const restaurant = {
   },
 };
 
+/**
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '� Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '� Substitution'],
+  [64, '� Yellow card'],
+  [69, '� Red card'],
+  [70, '� Substitution'],
+  [72, '� Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '� Yellow card'],
+]);
+
+const events = [...new Set(gameEvents.values())];
+events;
+
+gameEvents.delete(64);
+gameEvents;
+
+const minutesArr = [...gameEvents.keys()];
+minutesArr;
+console.log(minutesArr.length);
+let sum = 0;
+// console.log(gameEvents.size)
+for (let i = 0; i < minutesArr.length - 1; i++) {
+  sum += minutesArr[i + 1] - minutesArr[i];
+}
+sum;
+const average = sum / minutesArr.length;
+console.log(`An event happened on average, every ${average} minutes`);
+
+const time = [...gameEvents.keys()].pop();
+time;
+console.log(
+  `An event happened on average, every ${90 / gameEvents.size} minutes`
+);
+console.log(
+  `An event happened on average, every ${time / gameEvents.size} minutes`
+);
+
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`[${half} HALF] ${min}: ${event}`);
+}
+
+
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
@@ -84,7 +132,7 @@ console.log(...question.keys());
 console.log(question.values());
 console.log(...question.values());
 
-/**
+
 
 const rest = new Map();
 rest.set('name', 'Classico Italiano');
