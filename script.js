@@ -43,11 +43,53 @@ const restaurant = {
   },
   orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
-    console.log(otherIngredients);
+    console.log(otherIngredients ?? dd);
   },
 };
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
 
-/**
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[3]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.indexOf('Portugal'));
+console.log(airline.lastIndexOf('r'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -2));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat 😅');
+  else console.log('You got Lucky 😎');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('Joshua'));
+
+// const checkMidleSeat = function (seat) {
+//   // B and E are middle Seats
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E') console.log('You got the middle seat 😅');
+//   else console.log('You got Lucky 😎');
+// };
+
+/* 
 const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '� Substitution'],
@@ -200,7 +242,7 @@ console.log(new Set('thequickbrownfoxjumpsoverthelazydog').size);
 
 // Coding Challenge 2
 
- * Let's continue with our football betting app! Keep using the 'game' variable from 
+  Let's continue with our football betting app! Keep using the 'game' variable from 
 before.
 Your tasks:
 1. Loop over the game.scored array and print each player name to the console, 
@@ -222,9 +264,9 @@ game, it will look like this:
  Hummels: 1,
  Lewandowski: 2
 }
-*/
 
-/*
+
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -685,5 +727,6 @@ console.log(i, j, k);
 // Deafuelet values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+
 
 */
