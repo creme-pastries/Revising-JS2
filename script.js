@@ -43,10 +43,54 @@ const restaurant = {
   },
   orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
-    console.log(otherIngredients ?? dd);
+    console.log(otherIngredients);
   },
 };
 
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const text = document.querySelector('textarea');
+const button = document.querySelector('button');
+
+button.addEventListener('click', function () {
+  const input = text.value.split('\n');
+  const inputFinal = [];
+  for (const [i, newName] of input.entries()) {
+    // const textSplit = newName.toLowerCase().trim().split('_');
+    // let second = textSplit.pop(0);
+    // second = second[0].toUpperCase() + second.slice(1);
+    const [first, second] = newName.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${' ✨'.repeat(i + 1)}`);
+    inputFinal.push(`${output.padEnd(20)}${' ✨'.repeat(i + 1)}`);
+  }
+  text.value = inputFinal.join('\n');
+});
+
+/**underscore_case
+first_name
+Some_Variable 
+ calculate_AGE
+delayed_departure 
+
+  console.log(inputFinal.push(newNamed.join('\n')));
+   */
+
+// document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('button'));
+
+// const text = document.querySelector('textarea');
+// const button = document.querySelector('button');
+
+// button.addEventListener('click', function () {
+//   text.value = text.value.toLowerCase();
+// });
+
+/* 
 //Split and Join
 console.log('a+very+nice+string'.split('+'));
 console.log('Joshua Onyema'.split(' '));
@@ -92,17 +136,13 @@ const planesInLine = function (n) {
 
 planesInLine(5);
 
+️'.repeat(n)}`);
+};
+
+planesInLine(5);
+
 /* 
-const airline = 'TAP Air Portugal';
-
-console.log(airline.toUpperCase());
-console.log(airline.toLowerCase());
-
-// Fix capitalization in name
-const passenger = 'jOsHuA';
-const passengerLower = passenger.toLowerCase();
-const passengerCorrect =
-  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+rCase() + passengerLower.slice(1);
 
 passengerCorrect;
 
